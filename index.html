@@ -1,1 +1,15 @@
 criny79 blog
+
+# OS Setting
+PRETTY_NAME="Ubuntu 20.04.3 LTS"
+
+// Disable update
+$ sudoedit /etc/apt/apt.conf.d/20auto-upgrades
+APT::Periodic::Update-Package-Lists "0";
+APT::Periodic::Download-Upgradeable-Packages "0";
+APT::Periodic::AutocleanInterval "0";
+APT::Periodic::Unattended-Upgrade "1
+
+// Citrix workspace (https://en.code-bude.net/2017/05/03/how-to-fix-ssl-error-61-in-citrix-web-receiver-on-linux/)
+$ /opt/Citrix/ICAClient/keystore/cacerts
+$ sudo ln -s /usr/share/ca-certificates/mozilla/* /opt/Citrix/ICAClient/keystore/cacerts
